@@ -92,7 +92,7 @@ def submit():
                     models.Person.uid == username
                 ).first().voted
     except Exception:
-        print("User not in superlatives db!")
+        print("User not in superlatives db! " + username)
 
     if voted:
         return jsonify({'error': "already voted"})

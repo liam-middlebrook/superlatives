@@ -41,7 +41,15 @@
         </div>
     </div>
 </nav>
-<div class="container">
+
+<div class="container" id="spinnerContainer">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+
+<div class="container" id="formContainer">
     <div style="padding-top:20px">
         <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
             Welcome to CSH Superlatives! Please fill out the form below to cast your votes for this year's yearbook superlatives. Make sure you add your personal quote and favorite CSH memory! Questions? Please contact <strong><a href="mailto:rosehacker@csh.rit.edu">Rose Hacker</a></strong>.
@@ -55,8 +63,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:20px;">
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label" for="name">Quote (will be printed under your portrait)</label>
-                            <input class="form-control" id="name" name="name" type="text">
+                            <label class="control-label" for="quote">Quote (will be printed under your portrait)</label>
+                            <input class="form-control" id="quote" name="quote" type="text">
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -69,8 +77,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:20px;">
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label" for="name">Favorite CSH Memory</label>
-                            <input class="form-control" id="name" name="name" type="text">
+                            <label class="control-label" for="memory">Favorite CSH Memory</label>
+                            <input class="form-control" id="memory" name="memory" type="text">
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -82,33 +90,13 @@
             <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
-                        <label for="position" class="control-label">Cutest Couple</label>
+                        <label class="control-label">Cutest Couple</label>
                         <div class="form-group">
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <select id="superlative_0" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                         <div class="form-group">
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <select id="superlative_1" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -121,18 +109,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Technical</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_2" class="control-label">Most Technical</label>
+                            <select id="superlative_2" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -145,18 +123,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Social</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_3" class="control-label">Most Social</label>
+                            <select id="superlative_3" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -169,18 +137,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Autistic</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_4" class="control-label">Most Autistic</label>
+                            <select id="superlative_4" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -193,18 +151,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Artistic</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_5" class="control-label">Most Artistic</label>
+                            <select id="superlative_5" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -217,18 +165,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Black</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_6" class="control-label">Most Black</label>
+                            <select id="superlative_6" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -241,18 +179,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most White</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_7" class="control-label">Most White</label>
+                            <select id="superlative_7" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -265,18 +193,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Innocent</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_8" class="control-label">Most Innocent</label>
+                            <select id="superlative_8" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -289,18 +207,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Best Dancer</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_9" class="control-label">Best Dancer</label>
+                            <select id="superlative_9" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -313,19 +221,9 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Likely to Never Come Back After This
+                            <label for="superlative_10" class="control-label">Most Likely to Never Come Back After This
                                 Year</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <select id="superlative_10" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -338,18 +236,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Likely to Cause Downtime</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_11" class="control-label">Most Likely to Cause Downtime</label>
+                            <select id="superlative_11" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -362,18 +250,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Responsive RTP</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_12" class="control-label">Most Responsive RTP</label>
+                            <select id="superlative_12" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -386,18 +264,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Likely to Summon Angry Alumni</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_13" class="control-label">Most Likely to Summon Angry Alumni</label>
+                            <select id="superlative_13" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -410,18 +278,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Likely to be de-RTP'd</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_14" class="control-label">Most Likely to be de-RTP'd</label>
+                            <select id="superlative_14" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -434,18 +292,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Likely to be Impeached</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_15" class="control-label">Most Likely to be Impeached</label>
+                            <select id="superlative_15" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -458,18 +306,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Manipulative and Opportunistic</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_16" class="control-label">Most Manipulative and Opportunistic</label>
+                            <select id="superlative_16" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -482,18 +320,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Likely to Say Ridiculous Shit</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_17" class="control-label">Most Likely to Say Ridiculous Shit</label>
+                            <select id="superlative_17" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -506,19 +334,9 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Likely to Take Over CSH in a Violent Coup
+                            <label for="superlative_18" class="control-label">Most Likely to Take Over CSH in a Violent Coup
                                 de Grâce</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <select id="superlative_18" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -531,18 +349,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Wiki Contributions</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_19" class="control-label">Most Wiki Contributions</label>
+                            <select id="superlative_19" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -555,18 +363,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Predictable</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_20" class="control-label">Most Predictable</label>
+                            <select id="superlative_20" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -579,18 +377,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Least Predictable</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_21" class="control-label">Least Predictable</label>
+                            <select id="superlative_21" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -603,18 +391,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Changed Since Freshman Year</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_22" class="control-label">Most Changed Since Freshman Year</label>
+                            <select id="superlative_22" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -627,18 +405,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Musical</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_23" class="control-label">Most Musical</label>
+                            <select id="superlative_23" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -651,18 +419,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Gay</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_24" class="control-label">Most Gay</label>
+                            <select id="superlative_24" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -675,18 +433,8 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Flamboyantly Gay Straight Guy</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <label for="superlative_25" class="control-label">Most Flamboyantly Gay Straight Guy</label>
+                            <select id="superlative_25" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>
@@ -699,19 +447,9 @@
                 <div class="panel panel-default">
                     <div class="panel-body" style="padding-top:10px;">
                         <div class="form-group">
-                            <label for="position" class="control-label">Most Likely to be the Illuminati
+                            <label for="superlative_26" class="control-label">Most Likely to be the Illuminati
                                 Puppetmaster</label>
-                            <select id="position" name="position" class="form-control">
-                                <option value="eboard">Eboard in General</option>
-                                <option value="chairman">Chairman</option>
-                                <option value="evals">Evals</option>
-                                <option value="financial">Financial</option>
-                                <option value="rd">R&D</option>
-                                <option value="imps">House Imps</option>
-                                <option value="opcomm">Opcomm</option>
-                                <option value="history">History</option>
-                                <option value="social">Social</option>
-                            </select>
+                            <select id="superlative_26" name="superlative_" class="form-control"></select>
                             <span class="material-input"></span>
                         </div>
                     </div>

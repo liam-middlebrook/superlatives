@@ -13,7 +13,6 @@ function notify(type, message) {
     }
 
     if (type == "success") {
-
         noty({
             layout: layoutType,
             theme: 'csh',
@@ -26,10 +25,8 @@ function notify(type, message) {
             maxVisible: 1,
             killer: true
         });
-
     }
     else if (type == "error") {
-
         noty({
             layout: layoutType,
             theme: 'csh',
@@ -42,9 +39,7 @@ function notify(type, message) {
             maxVisible: 1,
             killer: true
         });
-
     } else if (type == "warning") {
-
         noty({
             layout: layoutType,
             theme: 'csh',
@@ -57,10 +52,8 @@ function notify(type, message) {
             maxVisible: 1,
             killer: true
         });
-
     }
     else {
-
         noty({
             layout: layoutType,
             theme: 'csh',
@@ -73,13 +66,10 @@ function notify(type, message) {
             maxVisible: 1,
             killer: true
         });
-
     }
     setTimeout(function () {
-
         $('.animated').removeClass("fadeIn");
         $('.animated').addClass("fadeOutDown");
-
     }, 3000);
 
     setTimeout(function () {
@@ -89,7 +79,7 @@ function notify(type, message) {
 }
 
 /* Profile Form Submission */
-$("#evalForm").submit(function (event) {
+$("#superlativeForm").submit(function (event) {
     var URL = 'resources/api/';
     event.preventDefault();
     datastring = $("#evalForm").serialize();
@@ -118,4 +108,12 @@ $("#evalForm").submit(function (event) {
     });
 
     return false;
+});
+
+$(document).ready(function() {
+    setTimeout(function() {
+        $("#spinnerContainer").fadeOut('slow', function() {
+           $("#formContainer").slideDown('slow');
+        });
+    }, 2000);
 });

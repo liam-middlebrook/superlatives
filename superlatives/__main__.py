@@ -107,7 +107,7 @@ def submit():
 
     return jsonify({'status': "ok"})
 
-@app.route('/voted', methods=['POST'])
+@app.route('/voted')
 def check_if_voted():
     import models
     #ensure webauth user hasn't already submitted

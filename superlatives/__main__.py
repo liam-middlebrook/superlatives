@@ -107,6 +107,17 @@ def submit():
 
     return jsonify({'status': "ok"})
 
+@app.route('/voted', methods=['POST'])
+def check_if_voted():
+    import models
+    #ensure webauth user hasn't already submitted
+    username = request.headers.get('x-webauth-user')
+    voted = models.Person.query.filter(
+                models.Person.uid == username
+            ).first().voted
+    return jsonify({'voted': voted})
+
+
 with open(sys.argv[1]) as config_file:
     json_config = json.load(config_file)
 

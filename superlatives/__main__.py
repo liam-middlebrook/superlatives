@@ -86,9 +86,13 @@ def submit():
     from database import db_session
     #ensure webauth user hasn't already submitted
     username = request.headers.get('x-webauth-user')
-    voted = models.Person.query.filter(
-                models.Person.uid == username
-            ).first().voted
+    voted = True
+    try:
+        voted = models.Person.query.filter(
+                    models.Person.uid == username
+                ).first().voted
+    except Exception:
+        print("User not in superlatives db!")
 
     if voted:
         return jsonify({'error': "already voted"})
@@ -112,9 +116,13 @@ def check_if_voted():
     import models
     #ensure webauth user hasn't already submitted
     username = request.headers.get('x-webauth-user')
-    voted = models.Person.query.filter(
-                models.Person.uid == username
-            ).first().voted
+    voted = True
+    try:
+        voted = models.Person.query.filter(
+                    models.Person.uid == username
+                ).first().voted
+    except Exception:
+        print("User not in superlatives db!")
     return jsonify({'voted': voted})
 
 

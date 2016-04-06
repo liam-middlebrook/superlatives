@@ -47,6 +47,8 @@ $("#submitBtn").click(function (event) {
                     type: "POST",
                     url: '/submit',
                     data: {
+                        "quote": $("#quote").val(),
+                        "history": $("#memory").val(),
                         "answers": {
                             superlative_0: $("#superlative_0").val(),
                             superlative_1: $("#superlative_1").val(),

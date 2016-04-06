@@ -86,6 +86,12 @@ $("#submitBtn").click(function (event) {
                     },
                     error: function (data) {
                         notify("error", "Failed to submit! Please try again later.")
+
+                        // Reset dialog
+                        $("#submitConfirmModal button").removeAttr('disabled');
+                        $("#submitConfirmModal .modal-body .spinner").hide();
+                        $("#submitConfirmModal .modal-body p").show();
+                        $("#submitConfirmModal").modal('hide');
                     }
                 });
             }

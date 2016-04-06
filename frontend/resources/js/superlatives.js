@@ -46,6 +46,8 @@ $("#submitBtn").click(function (event) {
                 $.ajax({
                     type: "POST",
                     url: '/submit',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
                     data: JSON.stringify({
                         "quote": $("#quote").val(),
                         "history": $("#memory").val(),

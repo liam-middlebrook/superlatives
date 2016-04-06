@@ -79,7 +79,8 @@ $("#submitBtn").click(function (event) {
                             superlative_24: $("#superlative_24").val(),
                             superlative_25: $("#superlative_25").val(),
                             superlative_26: $("#superlative_26").val(),
-                            superlative_27: $("#superlative_27").val()
+                            superlative_27: $("#superlative_27").val(),
+                            superlative_28: $("#superlative_28").val()
                         }
                     }),
                     success: function (data) {

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="resources/images/favicon.ico">
+
+    <title>Superlatives</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/members-flat.min.css">
+    <link rel="stylesheet" href="resources/css/bootstrap-material-design.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="resources/css/animate.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="resources/css/superlatives.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="resources/images/csh_logo_white.svg" alt="CSH" class="logo">
+                <span>Superlatives</span></a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div style="padding-top:20px">
+        <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+            Welcome to CSH Superlatives! Please fill out the form below to cast your votes for this year's yearbook superlatives. Make sure you add your personal quote and favorite CSH memory! Questions? Please contact <strong><a href="mailto:rosehacker@csh.rit.edu">Rose Hacker</a></strong>.
+            <div class="alert alert-warning" role="alert" style="margin-top: 20px;"><strong>Warning!</strong> You may only fill out this form once, and your responses cannot be edited once you submit them. Please double check your responses before you submit. All fields are required.</div>
+        </div>
+    </div>
+
+    <form name="superlativeForm" method="post" id="superlativeForm">
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:20px;">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label" for="name">Quote (will be printed under your portrait)</label>
+                            <input class="form-control" id="name" name="name" type="text">
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:20px;">
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label" for="name">Favorite CSH Memory</label>
+                            <input class="form-control" id="name" name="name" type="text">
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <label for="position" class="control-label">Cutest Couple</label>
+                        <div class="form-group">
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                        <div class="form-group">
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Technical</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Social</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Autistic</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Artistic</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Black</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most White</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Innocent</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Best Dancer</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Likely to Never Come Back After This
+                                Year</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Likely to Cause Downtime</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Responsive RTP</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Likely to Summon Angry Alumni</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Likely to be de-RTP'd</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Likely to be Impeached</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Manipulative and Opportunistic</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Likely to Say Ridiculous Shit</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Likely to Take Over CSH in a Violent Coup
+                                de Grâce</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Wiki Contributions</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Predictable</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Least Predictable</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Changed Since Freshman Year</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Musical</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Gay</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Flamboyantly Gay Straight Guy</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body" style="padding-top:10px;">
+                        <div class="form-group">
+                            <label for="position" class="control-label">Most Likely to be the Illuminati
+                                Puppetmaster</label>
+                            <select id="position" name="position" class="form-control">
+                                <option value="eboard">Eboard in General</option>
+                                <option value="chairman">Chairman</option>
+                                <option value="evals">Evals</option>
+                                <option value="financial">Financial</option>
+                                <option value="rd">R&D</option>
+                                <option value="imps">House Imps</option>
+                                <option value="opcomm">Opcomm</option>
+                                <option value="history">History</option>
+                                <option value="social">Social</option>
+                            </select>
+                            <span class="material-input"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="submit-btn-container">
+            <button class="btn submit-btn" id="submit" type="submit"><i class="fa fa-send"></i></button>
+        </div>
+
+    </form>
+
+</div><!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="resources/js/libraries/bootstrap.min.js"></script>
+<script src="resources/js/libraries/material.min.js"></script>
+<!-- Evals Custom JS -->
+<script src="resources/js/superlatives.js"></script>
+<!-- Noty.js -->
+<script src="resources/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+<script type="text/javascript" src="resources/js/noty/themes/csh.js"></script>
+<script>
+    $.material.init();
+</script>
+</body>
+</html>

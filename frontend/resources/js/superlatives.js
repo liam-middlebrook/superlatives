@@ -46,7 +46,7 @@ $("#submitBtn").click(function (event) {
                 $.ajax({
                     type: "POST",
                     url: '/submit',
-                    data: {
+                    data: JSON.stringify({
                         "quote": $("#quote").val(),
                         "history": $("#memory").val(),
                         "answers": {
@@ -79,7 +79,7 @@ $("#submitBtn").click(function (event) {
                             superlative_26: $("#superlative_26").val(),
                             superlative_27: $("#superlative_27").val()
                         }
-                    },
+                    }),
                     success: function (data) {
                         notify("success", "Thank you for submitting!");
                         location.reload();

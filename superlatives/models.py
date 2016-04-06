@@ -48,7 +48,6 @@ class SuperlativeVote(Base):
     superlative_25 = Column(Integer, nullable=False)
     superlative_26 = Column(Integer, nullable=False)
     superlative_27 = Column(Integer, nullable=False)
-    superlative_28 = Column(Integer, nullable=False)
 
     def __setitem__(self, item, value):
         self.__dict__[item] = value
@@ -58,6 +57,3 @@ class SuperlativeVote(Base):
         for answer in answers:
             self.__setitem__("superlative_" + str(i), answer)
             i += 1
-
-        print(self.superlative_0)
-        print(self.__dict__)

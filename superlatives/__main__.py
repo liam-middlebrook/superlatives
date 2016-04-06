@@ -98,6 +98,9 @@ def submit():
         return jsonify({'error': "already voted"})
 
 
+    print(request.form)
+    print(request.json)
+
     data = request.get_json()
     answers = data['answers']
     quote = data['quote']

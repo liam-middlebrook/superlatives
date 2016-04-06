@@ -98,12 +98,20 @@ def submit():
         return jsonify({'error': "already voted"})
 
 
-    answers = request.get_json()['answers']
+    data = request.get_json()
+    answers = data['answers']
+    quote = data['quote']
+    history = data['history']
 
     # Only vote once
     models.Person.query.filter(
         models.Person.uid == username).\
-        update({"voted": True})
+        update(
+            {
+                "quote": quote,
+                "fav_history": history,
+                "voted": True
+            })
 
     db_session.add(models.SuperlativeVote(answers))
     db_session.flush()

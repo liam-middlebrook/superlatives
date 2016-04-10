@@ -193,18 +193,41 @@ def display_stats_page():
         charts.append(pie.render().decode('utf-8'))
         i += 1
 
+    table = ""
+
     html = """
         <html>
              <head>
                   <title>%s</title>
              </head>
               <body>
+                <table>
+                <tr>
+                <th>
+                    <td>Name</td>
+                    <td>Quote</td>
+                    <td>Favorite Moment in History</td>
+                </th>
+                </tr>
+                 %s
+                 </table>
                  %s
              </body>
         </html>
-    """ % ("Superlatives", ''.join(charts))
+    """ % ("Superlatives", ''.join(getMoments()), ''.join(charts))
     return html
 
+def getMoments():
+    import models
+
+    return [("""
+    <tr>
+        <td>%s</td>
+        <td>%s</td>
+        <td>%s</td>
+    </tr>
+    """ % (p.name, p.quote, p.fav_history)) for p in models.Person.query.filter(
+            models.Person.voted == True)]
 def getName(id):
     import models
 

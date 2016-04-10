@@ -52,6 +52,9 @@ class SuperlativeVote(Base):
     def __setitem__(self, item, value):
         self.__dict__[item] = value
 
+    def __getitem__(self, item):
+        return self.__dict__[item]
+
     def __init__(self, answers):
         i = 0
         for answer in answers:

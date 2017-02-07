@@ -20,6 +20,8 @@ import superlatives.models
 if os.path.exists(os.path.join(os.getcwd(), "config.env.py")):
     app.config.from_pyfile(os.path.join(os.getcwd(), "config.env.py"))
 
+requests.packages.urllib3.disable_warnings()
+
 auth = OIDCAuthentication(app,
                           issuer=app.config['OIDC_ISSUER'],
                           client_registration_info=app.config['OIDC_CLIENT_CONFIG'])

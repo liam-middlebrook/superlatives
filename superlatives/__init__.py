@@ -4,6 +4,7 @@ from flask import Flask, jsonify, request, session, redirect, render_template, u
 from flask_sqlalchemy import SQLAlchemy
 from flask_pyoidc.flask_pyoidc import OIDCAuthentication
 import flask_migrate
+import requests
 import os
 import sys
 import pygal

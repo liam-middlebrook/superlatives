@@ -11,9 +11,6 @@ import pygal
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_NOTIFICATIONS'] = False
 
-auth = OIDCAuthentication(app,
-                          issuer=app.config['OIDC_ISSUER'],
-                          client_registration_info=app.config['OIDC_CLIENT_CONFIG'])
 
 db = SQLAlchemy(app)
 migrate = flask_migrate.Migrate(app, db)
@@ -22,6 +19,10 @@ import superlatives.models
 
 if os.path.exists(os.path.join(os.getcwd(), "config.env.py")):
     app.config.from_pyfile(os.path.join(os.getcwd(), "config.env.py"))
+
+auth = OIDCAuthentication(app,
+                          issuer=app.config['OIDC_ISSUER'],
+                          client_registration_info=app.config['OIDC_CLIENT_CONFIG'])
 eboard = \
     [
         'ajgajg1134',

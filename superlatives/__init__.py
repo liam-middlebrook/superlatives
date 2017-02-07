@@ -95,8 +95,8 @@ def list_people():
     return jsonify({'people': people})
 
 @app.route('/rtps')
-def list_rtps():
 @auth.oidc_auth
+def list_rtps():
     people = [
                 {
                     'name': m.name,

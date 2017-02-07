@@ -1,7 +1,8 @@
 # CSH Superlatives Main
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, session, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from flask_pyoidc.flask_pyoidc import OIDCAuthentication
 import flask_migrate
 import os
 import sys
@@ -10,6 +11,9 @@ import pygal
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_NOTIFICATIONS'] = False
 
+auth = OIDCAuthentication(app,
+                          issuer=app.config['OIDC_ISSUER'],
+                          client_registration_info=app.config['OIDC_CLIENT_CONFIG'])
 
 db = SQLAlchemy(app)
 migrate = flask_migrate.Migrate(app, db)
@@ -76,10 +80,12 @@ questions = \
         'Most Lit CSHer'
     ]
 @app.route('/')
+@auth.oidc_auth
 def hi():
     return jsonify({'message':"hi"})
 
 @app.route('/people')
+@auth.oidc_auth
 def list_people():
     people = [
                 {
@@ -90,6 +96,7 @@ def list_people():
 
 @app.route('/rtps')
 def list_rtps():
+@auth.oidc_auth
     people = [
                 {
                     'name': m.name,
@@ -99,6 +106,7 @@ def list_rtps():
     return jsonify({'people': people})
 
 @app.route('/eboard')
+@auth.oidc_auth
 def list_eboard():
     people = [
                 {
@@ -115,9 +123,9 @@ def list_eboard():
 #   associating people with IDs
 #
 @app.route('/submit', methods=['POST'])
+@auth.oidc_auth
 def submit():
-    #ensure webauth user hasn't already submitted
-    username = request.headers.get('x-webauth-user')
+    username = str(session['userinfo'].get('sub', ''))
     voted = True
     try:
         voted = models.Person.query.filter(
@@ -155,9 +163,9 @@ def submit():
     return jsonify({'status': "ok"})
 
 @app.route('/voted')
+@auth.oidc_auth
 def check_if_voted():
-    #ensure webauth user hasn't already submitted
-    username = request.headers.get('x-webauth-user')
+    username = str(session['userinfo'].get('sub', ''))
     voted = True
     try:
         voted = models.Person.query.filter(
@@ -168,6 +176,7 @@ def check_if_voted():
     return jsonify({'voted': voted})
 
 @app.route('/stats')
+@auth.oidc_auth
 def display_stats_page():
     # display couples
     charts = []
@@ -261,3 +270,9 @@ def get_stats():
                 results[i][v] = 1
             i += 1
     return results
+
+
+@app.route("/logout")
+@auth.oidc_logout
+def logout():
+    return redirect(url_for('index'), 302)

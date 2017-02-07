@@ -1,8 +1,8 @@
 # CSH Superlatives Models
 from sqlalchemy import Column, Integer, String, Boolean
-from database import Base
+from superlatives import db
 
-class Person(Base):
+class Person(db.Model):
     __tablename__ = 'people'
     id = Column(Integer, primary_key=True)
     name = Column(String(64), nullable=False)
@@ -16,7 +16,7 @@ class Person(Base):
         self.uid = uid
         self.voted = False
 
-class SuperlativeVote(Base):
+class SuperlativeVote(db.Model):
     __tablename__ = 'superlatives'
     id = Column(Integer, primary_key=True)
     # 0 and 1 are for the couple entry

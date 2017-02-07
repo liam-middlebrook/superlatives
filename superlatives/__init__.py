@@ -1,16 +1,23 @@
 # CSH Superlatives Main
 
-from database import init_db
-
 from flask import Flask, jsonify, request
-import json
+from flask_sqlalchemy import SQLAlchemy
+import flask_migrate
+import os
 import sys
 import pygal
 
-json_config = None
-
 app = Flask(__name__)
+app.config['SQLALCHEMY_TRACK_NOTIFICATIONS'] = False
 
+
+db = SQLAlchemy(app)
+migrate = flask_migrate.Migrate(app, db)
+
+import superlatives.models
+
+if os.path.exists(os.path.join(os.getcwd(), "config.env.py")):
+    app.config.from_pyfile(os.path.join(os.getcwd(), "config.env.py"))
 eboard = \
     [
         'ajgajg1134',
@@ -74,7 +81,6 @@ def hi():
 
 @app.route('/people')
 def list_people():
-    import models
     people = [
                 {
                     'name': m.name,
@@ -84,7 +90,6 @@ def list_people():
 
 @app.route('/rtps')
 def list_rtps():
-    import models
     people = [
                 {
                     'name': m.name,
@@ -95,7 +100,6 @@ def list_rtps():
 
 @app.route('/eboard')
 def list_eboard():
-    import models
     people = [
                 {
                     'name': m.name,
@@ -112,9 +116,6 @@ def list_eboard():
 #
 @app.route('/submit', methods=['POST'])
 def submit():
-    import models
-
-    from database import db_session
     #ensure webauth user hasn't already submitted
     username = request.headers.get('x-webauth-user')
     voted = True
@@ -147,15 +148,14 @@ def submit():
                 "voted": True
             })
 
-    db_session.add(models.SuperlativeVote(answers))
-    db_session.flush()
-    db_session.commit()
+    db.session.add(models.SuperlativeVote(answers))
+    db.session.flush()
+    db.session.commit()
 
     return jsonify({'status': "ok"})
 
 @app.route('/voted')
 def check_if_voted():
-    import models
     #ensure webauth user hasn't already submitted
     username = request.headers.get('x-webauth-user')
     voted = True
@@ -218,7 +218,6 @@ def display_stats_page():
     return html
 
 def getMoments():
-    import models
 
     return [("""
     <tr>
@@ -229,12 +228,10 @@ def getMoments():
     """ % (p.name, p.quote, p.fav_history)) for p in models.Person.query.filter(
             models.Person.voted == True)]
 def getName(id):
-    import models
 
     return models.Person.query.filter(
             models.Person.id == id).first().name
 def get_stats():
-    import models
 
     submissions = [m for m in models.SuperlativeVote.query.all()]
 
@@ -264,10 +261,3 @@ def get_stats():
                 results[i][v] = 1
             i += 1
     return results
-
-with open(sys.argv[1]) as config_file:
-    json_config = json.load(config_file)
-
-    init_db(json_config['db']['url'])
-
-    app.run(**json_config['flask'])

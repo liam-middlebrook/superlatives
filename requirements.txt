@@ -1,0 +1,4 @@
+pygal
+flask
+flask_migrate
+https://launchpad.net/oursql/py3k/py3k-0.9.4/+download/oursql-0.9.4.zip

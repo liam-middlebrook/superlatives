@@ -1,6 +1,6 @@
 # CSH Superlatives Main
 
-from flask import Flask, jsonify, request, session, redirect, url_for
+from flask import Flask, jsonify, request, session, redirect, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_pyoidc.flask_pyoidc import OIDCAuthentication
 import flask_migrate
@@ -81,7 +81,7 @@ questions = \
 @app.route('/')
 @auth.oidc_auth
 def hi():
-    return jsonify({'message':"hi"})
+    return render_template("index.html")
 
 @app.route('/people')
 @auth.oidc_auth

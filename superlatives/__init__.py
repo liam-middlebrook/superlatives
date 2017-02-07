@@ -29,27 +29,23 @@ eboard = \
     [
         'ajgajg1134',
         'com6056',
-        'faokryn',
-        'henry',
-        'jeid',
-        'maxime',
+        'joshgm',
+        'jmf',
+        'zach',
         'mbillow',
         'rosehacker',
-        'victoria'
+        'meghan'
     ]
 
 rtps = \
     [
+        'ehouse',
         'com6056',
         'dgonyeo',
-        'ehouse',
-        'jeid',
         'loothelion',
         'mbillow',
-        'rbuzzell',
-        'robgssp',
-        'rossdylan',
-        'slackwill'
+        'jmf',
+        'smirabito'
     ]
 
 questions = \

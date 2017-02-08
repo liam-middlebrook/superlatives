@@ -125,7 +125,7 @@ def list_eboard():
 @app.route('/submit', methods=['POST'])
 @auth.oidc_auth
 def submit():
-    username = str(session['userinfo'].get('sub', ''))
+    username = str(session['userinfo'].get('preferred_username', ''))
     voted = True
     try:
         voted = models.Person.query.filter(
@@ -165,14 +165,14 @@ def submit():
 @app.route('/voted')
 @auth.oidc_auth
 def check_if_voted():
-    username = str(session['userinfo'].get('sub', ''))
+    username = str(session['userinfo'].get('preferred_username', ''))
     voted = True
     try:
         voted = models.Person.query.filter(
                     models.Person.uid == username
                 ).first().voted
     except Exception:
-        print("User not in superlatives db!", file=sys.stderr)
+        print("User not in superlatives db!")
     return jsonify({'voted': voted})
 
 @app.route('/stats')

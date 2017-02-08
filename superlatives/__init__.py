@@ -1,4 +1,4 @@
-# CSH Superlatives Main
+#i CSH Superlatives Main
 
 from flask import Flask, jsonify, request, session, redirect, render_template, url_for
 from flask_sqlalchemy import SQLAlchemy
@@ -172,7 +172,7 @@ def check_if_voted():
                     models.Person.uid == username
                 ).first().voted
     except Exception:
-        print("User not in superlatives db!")
+        print("User not in superlatives db!", file=sys.stderr)
     return jsonify({'voted': voted})
 
 @app.route('/stats')

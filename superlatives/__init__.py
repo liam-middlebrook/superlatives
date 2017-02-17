@@ -247,9 +247,8 @@ def getMoments():
     """ % (p.name, p.quote, p.fav_history)) for p in models.Person.query.filter(
             models.Person.voted == True)]
 def getName(id):
-
     return models.Person.query.filter(
-            models.Person.id == id).first().name
+            models.Person.id == int(id)).first().name
 def get_stats():
 
     submissions = [m for m in models.SuperlativeVote.query.all()]
@@ -262,9 +261,7 @@ def get_stats():
         couple.sort()
         answer.pop(0)
         answer.pop(0)
-        print(couple)
-        print(answers)
-        answer.insert(0, ("%d,%d" % (couple[0], couple[1])))
+        answer.insert(0, couple[0] + "" + couple[1])
         answers.append(answer)
 
     results = []

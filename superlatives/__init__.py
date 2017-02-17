@@ -8,6 +8,7 @@ import requests
 import os
 import sys
 import pygal
+import json
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_NOTIFICATIONS'] = False

@@ -1,6 +1,7 @@
 # CSH Superlatives Models
 from sqlalchemy import Column, Integer, String, Boolean, Text
 from superlatives import db
+import json
 
 class Person(db.Model):
     __tablename__ = 'people'

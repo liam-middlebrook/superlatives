@@ -262,6 +262,8 @@ def get_stats():
         couple.sort()
         answer.pop(0)
         answer.pop(0)
+        print(couple)
+        print(answers)
         answer.insert(0, ("%d,%d" % (couple[0], couple[1])))
         answers.append(answer)
 

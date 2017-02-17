@@ -9,6 +9,7 @@ import os
 import sys
 import pygal
 import json
+import sys
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_NOTIFICATIONS'] = False
@@ -256,6 +257,7 @@ def get_stats():
     answers = []
     for s in submissions:
         answer = json.loads(s.data)
+        print(answer, file=sys.stderr)
 
         couple = [answer[0], answer[1]]
         couple.sort()

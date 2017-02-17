@@ -256,9 +256,7 @@ def get_stats():
 
     answers = []
     for s in submissions:
-        answer = []
-        for i in range(28):
-            answer.append(s.__getitem__("superlative_" + str(i)))
+        answer = json.loads(s.data)
 
         couple = [answer[0], answer[1]]
         couple.sort()

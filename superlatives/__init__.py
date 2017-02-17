@@ -49,6 +49,12 @@ rtps = \
         'smirabito'
     ]
 
+admin_users = \
+    [
+        "loothelion",
+        "rosehacker"
+    ]
+
 questions = \
     [
         'Cutest Couple',
@@ -178,6 +184,9 @@ def check_if_voted():
 @app.route('/stats')
 @auth.oidc_auth
 def display_stats_page():
+    username = str(session['userinfo'].get('preferred_username', ''))
+    if not username in admin_users:
+        return jsonify({'access': False})
     # display couples
     charts = []
     stats = get_stats()

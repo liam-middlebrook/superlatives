@@ -263,7 +263,7 @@ def get_stats():
         couple.sort()
         answer.pop(0)
         answer.pop(0)
-        answer.insert(0, couple[0] + "" + couple[1])
+        answer.insert(0, couple[0] + "," + couple[1])
         answers.append(answer)
 
     results = []

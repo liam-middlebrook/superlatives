@@ -108,11 +108,54 @@ function update_options() {
         type: "GET",
         url: "/questions",
         success: function (data) {
-            console.log(data);
+            var index = 0;
+            var last_block = $("#mem_outer");
+
             $.each(data, function(idx, value) {
                 // a
                 // populate questions
                 console.log(value.name + ":" + value.type);
+
+                var membersList = null;
+                var duplicate = false;
+                switch(type) {
+                    case "double":
+                        duplicate = true;
+                    case "default":
+                        membersList = allMembers;
+                        break;
+                    case "rtp":
+                        membersList = rtpMembers;
+                        break;
+                    case "eboard":
+                        membersList = eboardMembers;
+                        break;
+                }
+
+                // create div
+                after_str = \
+                '<div class="row">' + \
+                     '<div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">' + \
+                         '<div class="panel panel-default">' + \
+                             '<div class="panel-body" style="padding-top:10px;">' + \
+                                 '<label class="control-label">' + value.name + '</label>';
+
+                for(;duplicate == false; duplicate = false) {
+                    // run twice if needed
+                    after_str += \
+                                    '<div class="form-group">' + \
+                                         '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' + \
+                                         '<span class="material-input"></span>' + \
+                                    '</div>';
+                    index++;
+                }
+                    after_str += \
+                    '</div>' + \
+                '</div>' + \
+            '</div>' + \
+        '</div>';
+
+                last_block = last_block.after(after_str);
             });
         }
     });

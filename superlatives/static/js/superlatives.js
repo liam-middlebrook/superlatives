@@ -104,6 +104,33 @@ $("#submitBtn").click(function (event) {
  */
 
 function update_options() {
+    var allMembers, rtpMembers, eboardMembers;
+
+    $.ajax({
+        type: "GET",
+        url: "/people",
+        success: function (data) {
+            allMembers = data.people;
+        },
+        async: false
+    });
+    $.ajax({
+        type: "GET",
+        url: "/rtps",
+        success: function (data) {
+            rtpMembers = data.people;
+        },
+        async: false
+    });
+    $.ajax({
+        type: "GET",
+        url: "/eboard",
+        success: function (data) {
+            eboardMembers = data.people;
+        },
+        async: false
+    });
+
     $.ajax({
         type: "GET",
         url: "/questions",
@@ -118,23 +145,23 @@ function update_options() {
 
                 var membersList = null;
                 var duplicate = false;
-                switch(type) {
+                switch(value.type) {
                     case "double":
                         duplicate = true;
                     case "default":
-                        membersList = "allMembers";
+                        membersList = allMembers;
                         break;
                     case "rtp":
-                        membersList = "rtpMembers";
+                        membersList = rtpMembers;
                         break;
                     case "eboard":
-                        membersList = "eboardMembers";
+                        membersList = eboardMembers;
                         break;
                 }
 
                 // create div
                 after_str = '' +
-                '<div class="row" id="block-' + index + '">' +
+                '<div class="row" id="block-' + idx + '">' +
                      '<div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">' +
                          '<div class="panel panel-default">' +
                              '<div class="panel-body" style="padding-top:10px;">' +
@@ -162,7 +189,10 @@ function update_options() {
         '</div>';
 
                 last_block.after(after_str);
-                last_block = $("#block-" + index);
+                $.each(membersList, function (key, val) {
+                        $('#superlative_' + index).append($("<option></option>").attr("value", val.id).text(val.name));
+                });
+                last_block = $("#block-" + idx);
             });
         }
     });

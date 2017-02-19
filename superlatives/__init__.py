@@ -77,28 +77,12 @@ questions = \
             'type': 'default'
         },
         {
-            'name': 'Most Likely to Win Any Video Game Tournament',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Artistic',
-            'type': 'default'
-        },
-        {
-            'name': 'Most CSH Spirit',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Likely to Launch a Million Dollar Startup',
-            'type': 'default'
-        },
-        {
             'name': 'Most Innocent',
             'type': 'default'
         },
         {
-            'name': 'Best Dancer',
-            'type': 'default'
+            'name': 'Best DuoDancer',
+            'type': 'double'
         },
         {
             'name': 'Most Likely to Never Come Back After This Year',
@@ -123,54 +107,6 @@ questions = \
         {
             'name': 'Most Likely to be Impeached',
             'type': 'eboard'
-        },
-        {
-            'name': 'Most Likely to Brighten Your Day',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Likely to Say Ridiculous Shit',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Likely to Take Over CSH in a Violent Coup de Grâce',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Wiki Contributions',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Predictable',
-            'type': 'default'
-        },
-        {
-            'name': 'Least Predictable',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Changed Since Freshman Year',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Musical',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Likely to Survive in The L the Longest',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Likely to Go to Bed When Everbody Else is Waking Up',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Likely to be the Illuminate Puppetmaster',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Lit CSHer',
-            'type': 'default'
         }
     ]
 @app.route('/')

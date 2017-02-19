@@ -2,10 +2,6 @@
  * Question Options Configuration
  */
 
-var questions_all = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27];
-var questions_eboard = [15];
-var questions_rtps = [12, 14];
-
 $(document).ready(function () {
 
     $.ajax({
@@ -110,52 +106,64 @@ $("#submitBtn").click(function (event) {
 function update_options() {
     $.ajax({
         type: "GET",
-        url: "/people",
+        url: "/questions",
         success: function (data) {
-            $.each(data.people, function (key, value) {
-                questions_all.forEach(function (currentValue, index, array) {
-                    $('#superlative_' + array[index]).append($("<option></option>").attr("value", value.id).text(value.name));
-                });
+            $.each(data, function(value) {
+                // a
+                // populate questions
+                console.log(value);
             });
-
-            $.ajax({
-                type: "GET",
-                url: "/rtps",
-                success: function (data) {
-                    $.each(data.people, function (key, value) {
-                        questions_rtps.forEach(function (currentValue, index, array) {
-                            $('#superlative_' + array[index]).append($("<option></option>").attr("value", value.id).text(value.name));
-                        });
-                    });
-
-                    $.ajax({
-                        type: "GET",
-                        url: "/eboard",
-                        success: function (data) {
-                            $.each(data.people, function (key, value) {
-                                questions_eboard.forEach(function (currentValue, index, array) {
-                                    $('#superlative_' + array[index]).append($("<option></option>").attr("value", value.id).text(value.name));
-                                });
-                            });
-
-                            $("#spinnerContainer").fadeOut('slow', function () {
-                                $("#formContainer").slideDown('slow');
-                            });
-                        },
-                        error: function (data) {
-                            notify("error", "Unable to retrieve eboard list.");
-                        }
-                    });
-                },
-                error: function (data) {
-                    notify("error", "Unable to retrieve RTP list.");
-                }
-            });
-        },
-        error: function (data) {
-            notify("error", "Unable to retrieve user list.");
         }
     });
+
+    // $.ajax({
+    //     type: "GET",
+    //     url: "/people",
+    //     success: function (data) {
+    //         $.each(data.people, function (key, value) {
+    //             questions_all.forEach(function (currentValue, index, array) {
+    //                 $('#superlative_' + array[index]).append($("<option></option>").attr("value", value.id).text(value.name));
+    //             });
+    //         });
+
+    //         $.ajax({
+    //             type: "GET",
+    //             url: "/rtps",
+    //             success: function (data) {
+    //                 $.each(data.people, function (key, value) {
+    //                     questions_rtps.forEach(function (currentValue, index, array) {
+    //                         $('#superlative_' + array[index]).append($("<option></option>").attr("value", value.id).text(value.name));
+    //                     });
+    //                 });
+
+    //                 $.ajax({
+    //                     type: "GET",
+    //                     url: "/eboard",
+    //                     success: function (data) {
+    //                         $.each(data.people, function (key, value) {
+    //                             questions_eboard.forEach(function (currentValue, index, array) {
+    //                                 $('#superlative_' + array[index]).append($("<option></option>").attr("value", value.id).text(value.name));
+    //                             });
+    //                         });
+
+    //                         $("#spinnerContainer").fadeOut('slow', function () {
+    //                             $("#formContainer").slideDown('slow');
+    //                         });
+    //                     },
+    //                     error: function (data) {
+    //                         notify("error", "Unable to retrieve eboard list.");
+    //                     }
+    //                 });
+    //             },
+    //             error: function (data) {
+    //                 notify("error", "Unable to retrieve RTP list.");
+    //             }
+    //         });
+    //     },
+    //     error: function (data) {
+    //         notify("error", "Unable to retrieve user list.");
+    //     }
+    // });
 }
 
 /**

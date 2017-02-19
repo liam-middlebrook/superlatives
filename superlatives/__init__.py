@@ -57,40 +57,131 @@ admin_users = \
         "rosehacker"
     ]
 
+# types
+# rtp
+# eboard
+# double
+# default
 questions = \
     [
-        'Cutest Couple',
-        'Most Technical',
-        'Most Social',
-        'Most Likely to Win Any Video Game Tournament',
-        'Most Artistic',
-        'Most CSH Spirit',
-        'Most Likely to Launch a Million Dollar Startup',
-        'Most Innocent',
-        'Best Dancer',
-        'Most Likely to Never Come Back After This Year',
-        'Most Likely to Cause Downtime',
-        'Most Repsonsive RTP',
-        'Most Likely to Summon Angry Alumni',
-        'Most Likely to be de-RTP\'d',
-        'Most Likely to be Impeached',
-        'Most Likely to Brighten Your Day',
-        'Most Likely to Say Ridiculous Shit',
-        'Most Likely to Take Over CSH in a Violent Coup de Grâce',
-        'Most Wiki Contributions',
-        'Most Predictable',
-        'Least Predictable',
-        'Most Changed Since Freshman Year',
-        'Most Musical',
-        'Most Likely to Survive in The L the Longest',
-        'Most Likely to Go to Bed When Everbody Else is Waking Up',
-        'Most Likely to be the Illuminate Puppetmaster',
-        'Most Lit CSHer'
+        {
+            'name': 'Cutest Couple',
+            'type': 'double'
+        },
+        {
+            'name': 'Most Technical',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Social',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to Win Any Video Game Tournament',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Artistic',
+            'type': 'default'
+        },
+        {
+            'name': 'Most CSH Spirit',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to Launch a Million Dollar Startup',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Innocent',
+            'type': 'default'
+        },
+        {
+            'name': 'Best Dancer',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to Never Come Back After This Year',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to Cause Downtime',
+            'type': 'rtp'
+        },
+        {
+            'name': 'Most Repsonsive RTP',
+            'type': 'rtp'
+        },
+        {
+            'name': 'Most Likely to Summon Angry Alumni',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to be de-RTP\'d',
+            'type': 'rtp'
+        },
+        {
+            'name': 'Most Likely to be Impeached',
+            'type': 'eboard'
+        },
+        {
+            'name': 'Most Likely to Brighten Your Day',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to Say Ridiculous Shit',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to Take Over CSH in a Violent Coup de Grâce',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Wiki Contributions',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Predictable',
+            'type': 'default'
+        },
+        {
+            'name': 'Least Predictable',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Changed Since Freshman Year',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Musical',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to Survive in The L the Longest',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to Go to Bed When Everbody Else is Waking Up',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Likely to be the Illuminate Puppetmaster',
+            'type': 'default'
+        },
+        {
+            'name': 'Most Lit CSHer'
+            'type': 'default'
+        }
     ]
 @app.route('/')
 @auth.oidc_auth
 def hi():
     return render_template("index.html")
+
+@app.route('/questions')
+@auth.oidc_auth
+def list_questions():
+    return jsonify(questions)
 
 @app.route('/people')
 @auth.oidc_auth

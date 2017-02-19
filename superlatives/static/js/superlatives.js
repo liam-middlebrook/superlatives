@@ -108,6 +108,7 @@ function update_options() {
         type: "GET",
         url: "/questions",
         success: function (data) {
+            console.log(data);
             $.each(data, function(key, value) {
                 // a
                 // populate questions

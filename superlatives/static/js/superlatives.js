@@ -1,7 +1,7 @@
 /**
  * Question Options Configuration
  */
-
+superlative_count = 0;
 $(document).ready(function () {
 
     $.ajax({
@@ -39,6 +39,11 @@ $("#submitBtn").click(function (event) {
                 $("#submitConfirmModal .modal-body p").show();
                 $("#submitConfirmModal").modal('hide');
             } else {
+                var answers = [];
+                for(var i = 0; i < superlative_count; i++)
+                {
+                    answers.push($("#superlative_" + i).val());
+                }
                 $.ajax({
                     type: "POST",
                     url: '/submit',
@@ -47,36 +52,7 @@ $("#submitBtn").click(function (event) {
                     data: JSON.stringify({
                         "quote": $("#quote").val(),
                         "history": $("#memory").val(),
-                        "answers": [
-                            $("#superlative_0").val(),
-                            $("#superlative_1").val(),
-                            $("#superlative_2").val(),
-                            $("#superlative_3").val(),
-                            $("#superlative_4").val(),
-                            $("#superlative_5").val(),
-                            $("#superlative_6").val(),
-                            $("#superlative_7").val(),
-                            $("#superlative_8").val(),
-                            $("#superlative_9").val(),
-                            $("#superlative_10").val(),
-                            $("#superlative_11").val(),
-                            $("#superlative_12").val(),
-                            $("#superlative_13").val(),
-                            $("#superlative_14").val(),
-                            $("#superlative_15").val(),
-                            $("#superlative_16").val(),
-                            $("#superlative_17").val(),
-                            $("#superlative_18").val(),
-                            $("#superlative_19").val(),
-                            $("#superlative_20").val(),
-                            $("#superlative_21").val(),
-                            $("#superlative_22").val(),
-                            $("#superlative_23").val(),
-                            $("#superlative_24").val(),
-                            $("#superlative_25").val(),
-                            $("#superlative_26").val(),
-                            $("#superlative_27").val()
-                        ]
+                        "answers": answers
                     }),
                     success: function (data) {
                         notify("success", "Thank you for submitting!");
@@ -164,6 +140,7 @@ function update_options() {
                                                                  '<span class="material-input"></span>' +
                                                             '</div>';
                                             index++;
+                                            superlative_count++;
                                             if (duplicate) {
                                                 after_str += '' +
                                                                 '<div class="form-group">' +
@@ -171,6 +148,7 @@ function update_options() {
                                                                      '<span class="material-input"></span>' +
                                                                 '</div>';
                                                 index++;
+                                                superlative_count++;
                                             }
                                             after_str += '' +
                                             '</div>' +

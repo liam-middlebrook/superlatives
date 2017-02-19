@@ -169,7 +169,7 @@ questions = \
             'type': 'default'
         },
         {
-            'name': 'Most Lit CSHer'
+            'name': 'Most Lit CSHer',
             'type': 'default'
         }
     ]

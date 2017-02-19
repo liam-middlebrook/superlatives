@@ -108,10 +108,10 @@ function update_options() {
         type: "GET",
         url: "/questions",
         success: function (data) {
-            $.each(data, function(value) {
+            $.each(data, function(key, value) {
                 // a
                 // populate questions
-                console.log(value);
+                console.log(key + " " + value);
             });
         }
     });

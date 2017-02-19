@@ -122,40 +122,47 @@ function update_options() {
                     case "double":
                         duplicate = true;
                     case "default":
-                        membersList = allMembers;
+                        membersList = "allMembers";
                         break;
                     case "rtp":
-                        membersList = rtpMembers;
+                        membersList = "rtpMembers";
                         break;
                     case "eboard":
-                        membersList = eboardMembers;
+                        membersList = "eboardMembers";
                         break;
                 }
 
                 // create div
-                after_str = \
-                '<div class="row">' + \
-                     '<div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">' + \
-                         '<div class="panel panel-default">' + \
-                             '<div class="panel-body" style="padding-top:10px;">' + \
+                after_str = '' +
+                '<div class="row" id="block-' + index + '">' +
+                     '<div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">' +
+                         '<div class="panel panel-default">' +
+                             '<div class="panel-body" style="padding-top:10px;">' +
                                  '<label class="control-label">' + value.name + '</label>';
 
-                for(;duplicate == false; duplicate = false) {
                     // run twice if needed
-                    after_str += \
-                                    '<div class="form-group">' + \
-                                         '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' + \
-                                         '<span class="material-input"></span>' + \
+                    after_str += '' +
+                                    '<div class="form-group">' +
+                                         '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' +
+                                         '<span class="material-input"></span>' +
                                     '</div>';
                     index++;
-                }
-                    after_str += \
-                    '</div>' + \
-                '</div>' + \
-            '</div>' + \
+                    if (duplicate) {
+                        after_str += '' +
+                                        '<div class="form-group">' +
+                                             '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' +
+                                             '<span class="material-input"></span>' +
+                                        '</div>';
+                        index++;
+                    }
+                    after_str += '' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
         '</div>';
 
-                last_block = last_block.after(after_str);
+                last_block.after(after_str);
+                last_block = $("#block-" + index);
             });
         }
     });

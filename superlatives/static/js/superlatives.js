@@ -111,90 +111,87 @@ function update_options() {
         url: "/people",
         success: function (data) {
             allMembers = data.people;
-        },
-        async: false
-    });
-    $.ajax({
-        type: "GET",
-        url: "/rtps",
-        success: function (data) {
-            rtpMembers = data.people;
-        },
-        async: false
-    });
-    $.ajax({
-        type: "GET",
-        url: "/eboard",
-        success: function (data) {
-            eboardMembers = data.people;
-        },
-        async: false
-    });
+            $.ajax({
+                type: "GET",
+                url: "/rtps",
+                success: function (data) {
+                    rtpMembers = data.people;
+                    $.ajax({
+                        type: "GET",
+                        url: "/eboard",
+                        success: function (data) {
+                            eboardMembers = data.people;
+                            $.ajax({
+                                type: "GET",
+                                url: "/questions",
+                                success: function (data) {
+                                    var index = 0;
+                                    var last_block = $("#mem_outer");
 
-    $.ajax({
-        type: "GET",
-        url: "/questions",
-        success: function (data) {
-            var index = 0;
-            var last_block = $("#mem_outer");
+                                    $.each(data, function(idx, value) {
+                                        // a
+                                        // populate questions
+                                        console.log(value.name + ":" + value.type);
 
-            $.each(data, function(idx, value) {
-                // a
-                // populate questions
-                console.log(value.name + ":" + value.type);
+                                        var membersList = null;
+                                        var duplicate = false;
+                                        switch(value.type) {
+                                            case "double":
+                                                duplicate = true;
+                                            case "default":
+                                                membersList = allMembers;
+                                                break;
+                                            case "rtp":
+                                                membersList = rtpMembers;
+                                                break;
+                                            case "eboard":
+                                                membersList = eboardMembers;
+                                                break;
+                                        }
 
-                var membersList = null;
-                var duplicate = false;
-                switch(value.type) {
-                    case "double":
-                        duplicate = true;
-                    case "default":
-                        membersList = allMembers;
-                        break;
-                    case "rtp":
-                        membersList = rtpMembers;
-                        break;
-                    case "eboard":
-                        membersList = eboardMembers;
-                        break;
-                }
+                                        // create div
+                                        after_str = '' +
+                                        '<div class="row" id="block-' + idx + '">' +
+                                             '<div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">' +
+                                                 '<div class="panel panel-default">' +
+                                                     '<div class="panel-body" style="padding-top:10px;">' +
+                                                         '<label class="control-label">' + value.name + '</label>';
 
-                // create div
-                after_str = '' +
-                '<div class="row" id="block-' + idx + '">' +
-                     '<div class="col-xs-12 col-sm-offset-1 col-md-offset-2 col-sm-10 col-md-8">' +
-                         '<div class="panel panel-default">' +
-                             '<div class="panel-body" style="padding-top:10px;">' +
-                                 '<label class="control-label">' + value.name + '</label>';
+                                            // run twice if needed
+                                            after_str += '' +
+                                                            '<div class="form-group">' +
+                                                                 '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' +
+                                                                 '<span class="material-input"></span>' +
+                                                            '</div>';
+                                            index++;
+                                            if (duplicate) {
+                                                after_str += '' +
+                                                                '<div class="form-group">' +
+                                                                     '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' +
+                                                                     '<span class="material-input"></span>' +
+                                                                '</div>';
+                                                index++;
+                                            }
+                                            after_str += '' +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>' +
+                                '</div>';
 
-                    // run twice if needed
-                    after_str += '' +
-                                    '<div class="form-group">' +
-                                         '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' +
-                                         '<span class="material-input"></span>' +
-                                    '</div>';
-                    index++;
-                    if (duplicate) {
-                        after_str += '' +
-                                        '<div class="form-group">' +
-                                             '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' +
-                                             '<span class="material-input"></span>' +
-                                        '</div>';
-                        index++;
-                    }
-                    after_str += '' +
-                    '</div>' +
-                '</div>' +
-            '</div>' +
-        '</div>';
+                                        last_block.after(after_str);
+                                        $.each(membersList, function (key, val) {
+                                                $('#superlative_' + index).append($("<option></option>").attr("value", val.id).text(val.name));
+                                        });
+                                        last_block = $("#block-" + idx);
+                                    });
+                                }
+                            });
 
-                last_block.after(after_str);
-                $.each(membersList, function (key, val) {
-                        $('#superlative_' + index).append($("<option></option>").attr("value", val.id).text(val.name));
-                });
-                last_block = $("#block-" + idx);
+                        },
+                    });
+                },
             });
-        }
+        },
     });
 
     // $.ajax({

@@ -180,68 +180,26 @@ function update_options() {
 
                                         last_block.after(after_str);
                                         $.each(membersList, function (key, val) {
-                                                $('#superlative_' + index).append($("<option></option>").attr("value", val.id).text(val.name));
+                                                $('#superlative_' + (index - 1)).append($("<option></option>").attr("value", val.id).text(val.name));
                                         });
+                                        if(duplicate) {
+                                            $.each(membersList, function (key, val) {
+                                                    $('#superlative_' + (index - 2)).append($("<option></option>").attr("value", val.id).text(val.name));
+                                            });
+                                        }
                                         last_block = $("#block-" + idx);
                                     });
                                 }
                             });
-
+                            $("#spinnerContainer").fadeOut('slow', function () {
+                                 $("#formContainer").slideDown('slow');
+                            });
                         },
                     });
                 },
             });
         },
     });
-
-    // $.ajax({
-    //     type: "GET",
-    //     url: "/people",
-    //     success: function (data) {
-    //         $.each(data.people, function (key, value) {
-    //             questions_all.forEach(function (currentValue, index, array) {
-    //                 $('#superlative_' + array[index]).append($("<option></option>").attr("value", value.id).text(value.name));
-    //             });
-    //         });
-
-    //         $.ajax({
-    //             type: "GET",
-    //             url: "/rtps",
-    //             success: function (data) {
-    //                 $.each(data.people, function (key, value) {
-    //                     questions_rtps.forEach(function (currentValue, index, array) {
-    //                         $('#superlative_' + array[index]).append($("<option></option>").attr("value", value.id).text(value.name));
-    //                     });
-    //                 });
-
-    //                 $.ajax({
-    //                     type: "GET",
-    //                     url: "/eboard",
-    //                     success: function (data) {
-    //                         $.each(data.people, function (key, value) {
-    //                             questions_eboard.forEach(function (currentValue, index, array) {
-    //                                 $('#superlative_' + array[index]).append($("<option></option>").attr("value", value.id).text(value.name));
-    //                             });
-    //                         });
-
-    //                         $("#spinnerContainer").fadeOut('slow', function () {
-    //                             $("#formContainer").slideDown('slow');
-    //                         });
-    //                     },
-    //                     error: function (data) {
-    //                         notify("error", "Unable to retrieve eboard list.");
-    //                     }
-    //                 });
-    //             },
-    //             error: function (data) {
-    //                 notify("error", "Unable to retrieve RTP list.");
-    //             }
-    //         });
-    //     },
-    //     error: function (data) {
-    //         notify("error", "Unable to retrieve user list.");
-    //     }
-    // });
 }
 
 /**

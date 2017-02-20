@@ -295,7 +295,6 @@ def get_stats():
                 answer.pop(i)
                 answer.pop(i)
                 answer.insert(i, couple[0] + "," + couple[1])
-                i += 1
             i += 1
         print(answer, file=sys.stderr)
         answers.append(answer)

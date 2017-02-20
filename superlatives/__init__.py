@@ -301,7 +301,7 @@ def get_stats():
         answers.append(answer)
 
     results = []
-    for i in range(27):
+    for i in range(len(questions)):
         results.append({})
 
     for a in answers:

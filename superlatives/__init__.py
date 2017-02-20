@@ -284,6 +284,7 @@ def get_stats():
     answers = []
     for s in submissions:
         answer = json.loads(s.data)
+        print(answer, file=sys.stderr)
         i = 0
         for q in questions:
             if q['type'] == "double":

@@ -222,6 +222,7 @@ def display_stats_page():
 
 
     i = 0
+    print(stats, file=sys.stderr)
     for stat in stats:
         if questions[i]['type'] == "double":
             # couple

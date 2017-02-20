@@ -232,13 +232,12 @@ def display_stats_page():
                 couple = ("%s, %s" % (getName(c[0]), getName(c[1])))
                 pie.add(couple, count)
             charts.append(pie.render().decode('utf-8'))
-            stats.pop(i)
-
-        pie = pygal.Pie()
-        pie.title = questions[i]['name']
-        for person, count in stat.items():
-            pie.add(getName(person), count)
-        charts.append(pie.render().decode('utf-8'))
+        else:
+            pie = pygal.Pie()
+            pie.title = questions[i]['name']
+            for person, count in stat.items():
+                pie.add(getName(person), count)
+            charts.append(pie.render().decode('utf-8'))
         i += 1
 
     table = ""

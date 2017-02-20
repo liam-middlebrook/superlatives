@@ -220,19 +220,20 @@ def display_stats_page():
     charts = []
     stats = get_stats()
 
-    pie = pygal.Pie()
-    pie.title = questions[0]['name']
-    # couples
-    for couple, count in stats[0].items():
-        c = couple.split(',')
-        couple = ("%s, %s" % (getName(c[0]), getName(c[1])))
-        pie.add(couple, count)
-    charts.append(pie.render().decode('utf-8'))
 
-    stats.pop(0)
-
-    i = 1
+    i = 0
     for stat in stats:
+        if questions[i]['type'] == "couple":
+            # couple
+            pie = pygal.Pie()
+            pie.title = questions[i]['name']
+            for couple, count in stats[i].items():
+                c = couple.split(',')
+                couple = ("%s, %s" % (getName(c[0]), getName(c[1])))
+                pie.add(couple, count)
+            charts.append(pie.render().decode('utf-8'))
+            stats.pop(i)
+
         pie = pygal.Pie()
         pie.title = questions[i]['name']
         for person, count in stat.items():

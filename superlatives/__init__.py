@@ -283,14 +283,20 @@ def get_stats():
 
     answers = []
     for s in submissions:
-        answer = json.loads(s.data)
-        print(answer, file=sys.stderr)
+        form_answer = json.loads(s.data)
+        i = 0
+        for q in questions:
+            if q.type == "double":
+                # double
+                couple = [answer[i], answer[i+1]]
+                couple.sort()
 
-        couple = [answer[0], answer[1]]
-        couple.sort()
-        answer.pop(0)
-        answer.pop(0)
-        answer.insert(0, couple[0] + "," + couple[1])
+                answer.pop(i)
+                answer.pop(i)
+                answer.insert(i, couple[0] + "," + couple[1])
+                i += 1
+            i += 1
+        print(answer, file=sys.stderr)
         answers.append(answer)
 
     results = []

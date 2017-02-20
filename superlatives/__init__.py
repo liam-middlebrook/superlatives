@@ -221,7 +221,7 @@ def display_stats_page():
     stats = get_stats()
 
     pie = pygal.Pie()
-    pie.title = questions[0]
+    pie.title = questions[0]['name']
     # couples
     for couple, count in stats[0].items():
         c = couple.split(',')
@@ -234,7 +234,7 @@ def display_stats_page():
     i = 1
     for stat in stats:
         pie = pygal.Pie()
-        pie.title = questions[i]
+        pie.title = questions[i]['name']
         for person, count in stat.items():
             pie.add(getName(person), count)
         charts.append(pie.render().decode('utf-8'))

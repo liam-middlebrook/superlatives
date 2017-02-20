@@ -286,7 +286,7 @@ def get_stats():
         form_answer = json.loads(s.data)
         i = 0
         for q in questions:
-            if q.type == "double":
+            if q['type'] == "double":
                 # double
                 couple = [answer[i], answer[i+1]]
                 couple.sort()

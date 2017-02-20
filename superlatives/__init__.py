@@ -283,7 +283,7 @@ def get_stats():
 
     answers = []
     for s in submissions:
-        form_answer = json.loads(s.data)
+        answer = json.loads(s.data)
         i = 0
         for q in questions:
             if q['type'] == "double":

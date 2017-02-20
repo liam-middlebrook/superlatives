@@ -223,7 +223,7 @@ def display_stats_page():
 
     i = 0
     for stat in stats:
-        if questions[i]['type'] == "couple":
+        if questions[i]['type'] == "double":
             # couple
             pie = pygal.Pie()
             pie.title = questions[i]['name']

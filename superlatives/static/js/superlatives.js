@@ -136,7 +136,7 @@ function update_options() {
                                             // run twice if needed
                                             after_str += '' +
                                                             '<div class="form-group">' +
-                                                                 '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' +
+                                                                 '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"><option selected disabled>Please Select an Option</option></select>' +
                                                                  '<span class="material-input"></span>' +
                                                             '</div>';
                                             index++;
@@ -144,7 +144,7 @@ function update_options() {
                                             if (duplicate) {
                                                 after_str += '' +
                                                                 '<div class="form-group">' +
-                                                                     '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"></select>' +
+                                                                     '<select id="superlative_' + index + '" name="superlative_' + index + '" class="form-control"><option selected disabled>Please Select an Option</option></select>' +
                                                                      '<span class="material-input"></span>' +
                                                                 '</div>';
                                                 index++;

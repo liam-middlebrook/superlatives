@@ -30,7 +30,14 @@ $("#submitBtn").click(function (event) {
     $("#submitConfirmModal button").attr('disabled', 'disabled');
     $("#submitConfirmModal .modal-body p").fadeOut('slow', function () {
         $("#submitConfirmModal .modal-body .spinner").fadeIn('slow', function () {
-            if ($("#quote").val() == "" || $("#memory").val() == "") {
+            var answers = [];
+            for(var i = 0; i < superlative_count; i++)
+            {
+                answers.push($("#superlative_" + i).val());
+            }
+            if ($("#quote").val() == "" || $("#memory").val() == "" || answers.some(function (el) {
+                return el === null;
+            })) {
                 notify("error", "All fields are required. Please try again.");
 
                 // Reset dialog
@@ -39,11 +46,6 @@ $("#submitBtn").click(function (event) {
                 $("#submitConfirmModal .modal-body p").show();
                 $("#submitConfirmModal").modal('hide');
             } else {
-                var answers = [];
-                for(var i = 0; i < superlative_count; i++)
-                {
-                    answers.push($("#superlative_" + i).val());
-                }
                 $.ajax({
                     type: "POST",
                     url: '/submit',

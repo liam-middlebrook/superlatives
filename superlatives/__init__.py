@@ -53,6 +53,7 @@ rtps = \
 
 admin_users = \
     [
+        "kailey",
         "loothelion",
         "rosehacker"
     ]

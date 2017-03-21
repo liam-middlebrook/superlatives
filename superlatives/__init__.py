@@ -36,7 +36,7 @@ eboard = \
         'jmf',
         'zach',
         'mbillow',
-        'rosehacker',
+        'jhollander',
         'meghan'
     ]
 
@@ -66,48 +66,116 @@ admin_users = \
 questions = \
     [
         {
+            'name': 'Most likely to win any video game tournament',
+            'type': 'default'
+        },
+        {
+            'name': 'Most responsive RTP',
+            'type': 'rtp'
+        },
+        {
             'name': 'Cutest Couple',
             'type': 'double'
         },
         {
-            'name': 'Most Technical',
+            'name': 'Most likely to cause downtime',
+            'type': 'rtp'
+        },
+        {
+            'name': 'Most likely to be impeached',
+            'type': 'eboard'
+        },
+        {
+            'name': 'Most likely to brighten your day',
             'type': 'default'
         },
         {
-            'name': 'Most Social',
+            'name': 'Most artistic',
             'type': 'default'
         },
         {
-            'name': 'Most Innocent',
+            'name': 'Most musical',
             'type': 'default'
         },
         {
-            'name': 'Best DuoDancer',
+            'name': 'Most innocent',
+            'type': 'default'
+        },
+        {
+            'name': 'Most changed since freshmen year',
+            'type': 'default'
+        },
+        {
+            'name': 'Most likely to be the Illuminati puppet master',
+            'type': 'default'
+        },
+        {
+            'name': 'Most likely to survive in the L the longest',
+            'type': 'default'
+        },
+        {
+            'name': 'Most CSH spirit',
+            'type': 'default'
+        },
+        {
+            'name': 'Most unpredictable',
+            'type': 'default'
+        },
+        {
+            'name': 'Most likely to say ridiculous shit',
+            'type': 'default'
+        },
+        {
+            'name': 'Most likely to summon angry alumni',
+            'type': 'rtp'
+        },
+        {
+            'name': 'Best dancer',
+            'type': 'default'
+        },
+        {
+            'name': 'Most social',
+            'type': 'default'
+        },
+        {
+            'name': 'Most technical',
+            'type': 'default'
+        },
+        {
+            'name': 'Most likely to wake you up at 2AM',
+            'type': 'default'
+        },
+        {
+            'name': 'Most likely to be your future boss',
+            'type': 'default'
+        },
+        {
+            'name': 'Best to bring home to mom and dad',
+            'type': 'default'
+        },
+        {
+            'name': 'Life of the party',
+            'type': 'default'
+        },
+        {
+            'name': 'Most likely to say the wrong thing on a tour',
+            'type': 'default'
+        },
+        {
+            'name': 'Most likely to bring up a constitutional amendment',
+            'type': 'default'
+        },
+        {
+            'name': 'Best on floor chef',
+            'type': 'default'
+        },
+        {
+            'name': 'Best style',
             'type': 'double'
         },
         {
-            'name': 'Most Likely to Never Come Back After This Year',
+            'name': 'Most likely to do more after 2AM than most people do all day',
             'type': 'default'
-        },
-        {
-            'name': 'Most Likely to Cause Downtime',
-            'type': 'rtp'
-        },
-        {
-            'name': 'Most Repsonsive RTP',
-            'type': 'rtp'
-        },
-        {
-            'name': 'Most Likely to Summon Angry Alumni',
-            'type': 'default'
-        },
-        {
-            'name': 'Most Likely to be de-RTP\'d',
-            'type': 'rtp'
-        },
-        {
-            'name': 'Most Likely to be Impeached',
-            'type': 'eboard'
         }
     ]
 @app.route('/')

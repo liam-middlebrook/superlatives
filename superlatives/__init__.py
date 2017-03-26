@@ -236,14 +236,11 @@ def submit():
                     models.Person.uid == username
                 ).first().voted
     except Exception:
-        print("User not in superlatives db! " + username)
+        print("User not in superlatives db! " + username, file=stderr)
 
     if voted:
         return jsonify({'error': "already voted"})
 
-
-    print(request.form)
-    print(request.json)
 
     data = request.get_json()
     answers = data['answers']
@@ -276,7 +273,7 @@ def check_if_voted():
                     models.Person.uid == username
                 ).first().voted
     except Exception:
-        print("User not in superlatives db!")
+        print("User not in superlatives db! " + username, file=stderr)
     return jsonify({'voted': voted})
 
 @app.route('/stats')

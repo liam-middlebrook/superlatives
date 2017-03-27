@@ -19,6 +19,6 @@ OIDC_CLIENT_CONFIG = {
 SQLALCHEMY_DATABASE_URI = os.environ.get(
     'SUPERLATIVES_DATABASE_URI',
     'sqlite:///{}'.format(os.path.join(os.getcwd(), 'data.db')))
-SQLALCHEMY_POOL_RECYCLE = os.environ.get(
+SQLALCHEMY_POOL_RECYCLE = int(os.environ.get(
     'SQLALCHEMY_POOL_RECYCLE',
-    3600)
+    3600))

@@ -11,6 +11,8 @@ import pygal
 import json
 import sys
 
+VOTES_CLOSED=True
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_NOTIFICATIONS'] = False
 
@@ -229,6 +231,8 @@ def list_eboard():
 @app.route('/submit', methods=['POST'])
 @auth.oidc_auth
 def submit():
+    if VOTES_CLOSED:
+        return jsonify({'error': "voting closed"})
     username = str(session['userinfo'].get('preferred_username', ''))
     voted = True
     try:
@@ -266,6 +270,8 @@ def submit():
 @app.route('/voted')
 @auth.oidc_auth
 def check_if_voted():
+    if VOTES_CLOSED:
+        return jsonify({'voted': True})
     username = str(session['userinfo'].get('preferred_username', ''))
     voted = True
     try:
